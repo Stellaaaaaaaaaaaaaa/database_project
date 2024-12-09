@@ -17,6 +17,8 @@
                     margin-top: 5%;
                     display: block;
                     position: center;
+                    background-color: rgba(255, 255, 255, 0.8);
+                    /* 添加透明度 */
                 }
 
                 .form-group {
@@ -30,7 +32,7 @@
             </style>
         </head>
 
-        <body background="img/login.jpg" style=" background-repeat:no-repeat ;
+        <body background="img/1.jpg" style=" background-repeat:no-repeat ;
 background-size:100% 100%;
 background-attachment: fixed;">
             <c:if test="${!empty error}">
@@ -42,7 +44,7 @@ background-attachment: fixed;">
             <div></div>
             <h2
                 style="text-align: center; color: rgb(0, 0, 0); font-family: '华文行楷'; font-size: 500% ;margin-top: 100px;">
-                武汉大学图书管理系统</h2>
+                福州大学图书管理系统</h2>
 
             <div class="panel panel-default" id="login">
                 <div class="panel-heading" style="background-color: #fff">

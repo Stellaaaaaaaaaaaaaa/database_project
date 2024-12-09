@@ -73,7 +73,8 @@ public class BookController {
     }
 
     @RequestMapping("/book_add_do.html")
-    public String addBookDo(@RequestParam(value = "pubstr") String pubstr, Book book, RedirectAttributes redirectAttributes) {
+    public String addBookDo(@RequestParam(value = "pubstr") String pubstr, Book book,
+            RedirectAttributes redirectAttributes) {
         book.setPubdate(getDate(pubstr));
         if (bookService.addBook(book)) {
             redirectAttributes.addFlashAttribute("succ", "图书添加成功！");
@@ -89,11 +90,13 @@ public class BookController {
         Book book = bookService.getBook(bookId);
         ModelAndView modelAndView = new ModelAndView("admin_book_edit");
         modelAndView.addObject("detail", book);
+        System.out.println(1);
         return modelAndView;
     }
 
     @RequestMapping("/book_edit_do.html")
-    public String bookEditDo(@RequestParam(value = "pubstr") String pubstr, Book book, RedirectAttributes redirectAttributes) {
+    public String bookEditDo(@RequestParam(value = "pubstr") String pubstr, Book book,
+            RedirectAttributes redirectAttributes) {
         book.setPubdate(getDate(pubstr));
         if (bookService.editBook(book)) {
             redirectAttributes.addFlashAttribute("succ", "图书修改成功！");
