@@ -32,7 +32,7 @@
             </style>
         </head>
 
-        <body background="img/1.jpg" style=" background-repeat:no-repeat ;
+        <body background="img/fengmian.jpg" style=" background-repeat:no-repeat ;
 background-size:100% 100%;
 background-attachment: fixed;">
             <c:if test="${!empty error}">

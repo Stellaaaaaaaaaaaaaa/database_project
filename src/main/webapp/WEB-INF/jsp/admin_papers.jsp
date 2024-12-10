@@ -105,14 +105,14 @@ background-attachment: fixed;">
                                         <c:out value="${paper.vol}"></c:out>
                                     </td>
 
-                                    <td><a href="admin_paper_detail.html?paperId=<c:out value=" ${paper.paperId}">
+                                    <td><a href="admin_paper_detail.html?paperId=<c:out value="${paper.paperId}">
                                             </c:out>">
-                                            <button type="button" class="btn btn-success btn-xs">详情</button>
+                                            <button type="button" class="btn btn-success btn-xs">详情<tton>
                                         </a></td>
-                                    <td><a href="updatepaper.html?paperId=<c:out value=" ${paper.paperId}"></c:out>
-                                            "><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
-                                    <td><a href="deletepaper.html?paperId=<c:out value=" ${paper.paperId}"></c:out>
-                                            "><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
+                                    <td><a href="updatepaper.html?paperId=<c:out value="${paper.paperId}"></c:out>
+                                            "><button type="button" class="btn btn-info btn-xs">编辑<tton></a></td>
+                                    <td><a href="deletepaper.html?paperId=<c:out value="${paper.paperId}"></c:out>
+                                            "><button type="button" class="btn btn-danger btn-xs">删除<tton></a></td>
                                 </tr>
                             </c:forEach>
                         </tbody>

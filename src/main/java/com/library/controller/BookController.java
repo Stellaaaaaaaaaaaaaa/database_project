@@ -90,7 +90,6 @@ public class BookController {
         Book book = bookService.getBook(bookId);
         ModelAndView modelAndView = new ModelAndView("admin_book_edit");
         modelAndView.addObject("detail", book);
-        System.out.println(1);
         return modelAndView;
     }
 

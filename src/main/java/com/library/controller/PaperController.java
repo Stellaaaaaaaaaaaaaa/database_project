@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -81,7 +80,6 @@ public class PaperController {
 
     @RequestMapping("/paper_edit_do.html")
     public String paperEditDo(Paper paper, RedirectAttributes redirectAttributes) {
-
         if (paperService.editPaper(paper)) {
             redirectAttributes.addFlashAttribute("succ", "论文修改成功！");
         } else {
@@ -90,10 +88,10 @@ public class PaperController {
         return "redirect:/admin_papers.html";
     }
 
-    
     @RequestMapping("/admin_paper_detail.html")
     public ModelAndView adminPaperDetail(HttpServletRequest request) {
-        long paperId = Long.parseLong(request.getParameter("paperId"));
+        long paperId = Long
+                .parseLong(request.getParameter("paperId").substring(request.getParameter("paperId").length() - 1));
         Paper paper = paperService.getPaper(paperId);
         ModelAndView modelAndView = new ModelAndView("admin_paper_detail");
         modelAndView.addObject("detail", paper);
@@ -102,19 +100,18 @@ public class PaperController {
 
     @RequestMapping("/reader_paper_detail.html")
     public ModelAndView readerPaperDetail(HttpServletRequest request) {
-        long paperId = Long.parseLong(request.getParameter("paperId"));
+        long paperId = Long
+                .parseLong(request.getParameter("paperId").substring(request.getParameter("paperId").length() - 1));
         Paper paper = paperService.getPaper(paperId);
         ModelAndView modelAndView = new ModelAndView("reader_paper_detail");
         modelAndView.addObject("detail", paper);
         return modelAndView;
     }
 
-
     @RequestMapping("/reader_papers.html")
     public ModelAndView readerPapers(HttpServletRequest request) {
         ArrayList<Paper> papers = paperService.getAllPapers();
         ReaderCard readerCard = (ReaderCard) request.getSession().getAttribute("readercard");
-
         ModelAndView modelAndView = new ModelAndView("reader_papers");
         modelAndView.addObject("papers", papers);
         return modelAndView;
